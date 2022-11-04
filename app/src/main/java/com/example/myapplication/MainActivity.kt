@@ -17,13 +17,15 @@ class MainActivity : AppCompatActivity() {
         var emailiOK:Boolean=false
         var paroliOk:Boolean=false
 
-        var sum=""
 
         val saxeli=findViewById<EditText>(R.id.saxeli)
         val gvari: EditText=findViewById(R.id.gvari)
         val email: EditText=findViewById(R.id.emaili)
         val paroli:EditText=findViewById(R.id.paroli)
         val registracia:Button=findViewById(R.id.registracia)
+
+        var emailStr=email.text.toString()
+        var sum=""
 
 
 
@@ -39,15 +41,15 @@ class MainActivity : AppCompatActivity() {
                 gvariOk=true}
 
 
+        val emailchksign="@."
 
-
-            for (i in email.text.toString()){
-                if (i.toString()=="@"){
-                    sum+="@"
-                if (i.toString()=="i")
-                    sum+="."
-            }}
-        if (sum.contains("@.")){
+            for (i in emailStr.indices){
+                if (emailStr[i]=='@'){
+                    sum+="@"}
+                if (emailStr[i]=='.'){
+                    sum+="."}
+            }
+        if (emailchksign.contains(sum)){
             emailiOK=true
         }
 
@@ -69,14 +71,20 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        if (saxeliOK&&gvariOk&&emailiOK&&paroliOk){
+        if (saxeliOK&&gvariOk&&emailiOK&&paroliOk) {
             Toast.makeText(this, "gilocavt", Toast.LENGTH_SHORT).show()
+
+        }else{
+            Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()}
+
+
+
         }
 
     }
 
 
-}}
+}
 
 
 
