@@ -41,43 +41,42 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            for (i in email.text.toString().indices){
-                if (email.text.toString()[i]=='@'){
+            for (i in email.text.toString()){
+                if (i.toString()=="@"){
                     sum+="@"
-                if (email.text.toString()[i]=='.')
+                if (i.toString()=="i")
                     sum+="."
-                    }}
-            if (sum.contains("@.")){
-                emailiOK=true
+            }}
+        if (sum.contains("@.")){
+            emailiOK=true
+        }
+
+
+
+
+        var HParoliOk=false
+        for (i in paroli.text.toString().indices){
+            if (paroli.text.toString()[i].isDigit()){
+                HParoliOk=true
             }
-
-
-
-
-            var HParoliOk=false
-            for (i in paroli.text.toString().indices){
-                if (paroli.text.toString()[i].isDigit()){
-                     HParoliOk=true
-                }
-            }
-            if(paroli.text.toString().length>7&&HParoliOk){
-                paroliOk=true
-            }
+        }
+        if(paroli.text.toString().length>7&&HParoliOk){
+            paroliOk=true
+        }
 
 
 
 
 
 
-            if (saxeliOK&&gvariOk&&emailiOK&&paroliOk){
-                Toast.makeText(this, "gilocavt", Toast.LENGTH_SHORT).show()
-            }
+        if (saxeliOK&&gvariOk&&emailiOK&&paroliOk){
+            Toast.makeText(this, "gilocavt", Toast.LENGTH_SHORT).show()
+        }
 
-            }
+    }
 
 
-    }}
-
+}}
 
 
 
