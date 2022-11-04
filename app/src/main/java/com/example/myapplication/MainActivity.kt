@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            for (i in email.text.toString().indices){
-                if (email.text.toString()[i]=='@'){
+            for (i in email.text.toString()){
+                if (i.toString()[i]=="@){
                     sum+="@"
-                if (email.text.toString()[i]=='.')
+                if (i.toString()[i]=="i")
                     sum+="."
                     }}
             if (sum.contains("@.")){
